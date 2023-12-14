@@ -22,6 +22,7 @@ import com.querydsl.core.types.Operator;
  * @author sangyong choi
  */
 public enum MongodbOps implements Operator {
+    WHERE(Boolean.class),
     NEAR(Boolean.class),
     GEO_WITHIN_BOX(Boolean.class),
     ELEM_MATCH(Boolean.class),
