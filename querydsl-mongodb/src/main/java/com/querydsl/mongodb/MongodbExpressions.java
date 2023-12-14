@@ -95,4 +95,13 @@ public final class MongodbExpressions {
     public static <T, Q extends SimpleExpression<? super T>> BooleanExpression all(ListPath<T, Q> expr, Collection<T> params) {
         return Expressions.booleanOperation(MongodbOps.ALL, expr, ConstantImpl.create(params));
     }
+    /**
+     * Find documents using $where operator
+     *
+     * @param expr JS expression
+     * @return predicate
+     */
+    public static BooleanExpression where(Expression<String> expr) {
+        return Expressions.booleanOperation(MongodbOps.WHERE, expr);
+    }
 }
